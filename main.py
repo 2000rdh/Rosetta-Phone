@@ -8,7 +8,6 @@ import re
 from google.cloud import translate_v2 as translate
 
 print("running main.py")
-sampletext = "+17322895888, +17326518289, +17325551023***\n/Hello, how are you?/\n***span, chin, hebr"
 
 app = Flask(__name__)
 
