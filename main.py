@@ -15,7 +15,7 @@ account_sid = TWILIO_ACCOUNT_SID
 auth_token = TWILIO_AUTH_TOKEN
 client = Client(account_sid, auth_token)
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "C:\\Users\\2000r\\Documents\\translate\\translatetalk-1582409537821-c9cffd188eaf.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = ""
 translate_client = translate.Client()
 
 def detect(text):
@@ -37,10 +37,6 @@ def translate(text, target):
     result['detectedSourceLanguage']))
 		total = result['translatedText']
 		return total
-
-
-#store securely
-#https://www.twilio.com/docs/usage/secure-credentials
 
 @app.route("/sms", methods=['GET', 'POST'])
 
@@ -83,7 +79,7 @@ def receiveSMS():
 	        message = client.messages \
 	                .create(
 	                     body=result,
-	                     from_='+14253812112',
+	                     from_='',
 	                     to=nums[count]
 	                 )
 	    detect(text)
